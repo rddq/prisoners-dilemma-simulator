@@ -7,13 +7,13 @@ class Game:
         self.bias = bias
         self.reward = {
             # Both Cooperate
-            [0,0]:[3,3],
+            (0,0):[3,3],
             # P1 Cooperate, P2 Defect
-            [0,1]:[1,5],
+            (0,1):[1,5],
             # P1 Defect, P2 Cooperate
-            [1,0]:[5,1],
+            (1,0):[5,1],
             # Both Defect
-            [0,0]:[2,2]
+            (1,1):[2,2]
         }
     
     def playGame(self, iterations):
@@ -39,8 +39,8 @@ class Game:
     def __add_scores__(self, curr_round):
         p1_played = curr_round[0]
         p2_played = curr_round[1]
-        played = [p1_played, p2_played]
-        rewards = self.reward.get(played, "Invalid Player play()")
+        played = (p1_played, p2_played)
+        rewards = self.reward.get(played)
         curr_round.extend(rewards)
 
     def flip_biased_coin(self, bias):
