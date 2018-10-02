@@ -7,11 +7,7 @@ class PlotHelper:
     
     @staticmethod
     def __results_over_time__(player_results):
-        #results_over_time = [sum(results[0:i]) for i in range(0,len(results))] 
-        results_over_time = []
-        for x in range(0,len(player_results)):
-            sum1 = sum(player_results[0:x])
-            results_over_time.append(sum1)
+        results_over_time = [sum(player_results[0:i]) for i in range(0,len(player_results))] 
         return results_over_time
 
     @staticmethod
@@ -25,8 +21,8 @@ class PlotHelper:
         fig, ax1 = plt.subplots()
         
         x = range(0,len(results))
-        ax1.plot(x,p1_summation, label="Player 1 Reward", color='g')
-        ax1.plot(x,p2_summation, label="Player 2 Reward", color='r')
+        ax1.plot(x,p1_summation, label="Player 1 Reward", color='r')
+        ax1.plot(x,p2_summation, label="Player 2 Reward", color='g')
         
         ax1.set_xlim(0,len(results)) 
         ax1.set_title('Cumulative Reward vs Round Number')
@@ -38,5 +34,6 @@ class PlotHelper:
         ax1.legend()
 
         plt.show()
+        print("plot")
         # If it looks like there is only one line showing up, 
         # they are on top of each other
