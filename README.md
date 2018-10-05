@@ -9,6 +9,7 @@ Run the simulation by running Simulator.py
 ### Requirements
 
 Python 3.x
+
 Numpy and MatplotLib
 
 ## Authors
