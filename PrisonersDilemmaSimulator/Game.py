@@ -15,6 +15,7 @@ class Game:
         }
     
     def playGame(self, iterations, bias=None):
+        self.rounds = 0
         results = []       
         count = 0
         while count < iterations:
@@ -26,9 +27,11 @@ class Game:
             results.append(curr_round)
             count += 1           
             if bias is not None:
+                
                 end_game = self.__flip_biased_coin(bias)
                 if end_game:
                     break
+            self.rounds += 1
         return results                    
 
     def __add_scores(self, curr_round):

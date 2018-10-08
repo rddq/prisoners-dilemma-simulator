@@ -69,3 +69,11 @@ class AnalysisHelper:
             winner = score_totals.index(max(score_totals))  
             print("Winner: Player " + str(winner) )
         print(score_totals)
+
+    @staticmethod
+    def add_to_csv(data_for_csv,results_game,game,player_number):
+        data_to_add = []
+        data_to_add.append(player_number)
+        data_to_add.append(game.rounds)
+        data_to_add.extend(AnalysisHelper.total_score(results_game))
+        data_for_csv.append(data_to_add)

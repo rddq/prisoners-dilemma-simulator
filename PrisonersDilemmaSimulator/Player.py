@@ -25,7 +25,17 @@ class Player:
         return func(results)
 
     def __our_strategy(self,results):
+        # 2TfT--only forgives if the other player cooperates twice
+        if len(results) == 0:
+            return 0
+        other_player = not self._player_number
+        if len(results) == 1:
+            return results[-1][other_player]
+        if results[-1][other_player] == 0 and results[-2][other_player] == 0:
+            return 0
         return 1
+        # Other options:
+        #  Introduce a probability of forgiveness
 
     def __always_defect(self, results):
         return 1
