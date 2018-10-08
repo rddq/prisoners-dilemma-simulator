@@ -9,8 +9,7 @@ class Simulator:
     def __init__(self):
         pass
     
-if __name__ == '__main__':
-    
+if __name__ == '__main__':   
     all_results = []
     data_for_csv = []
     for i in range(0,9):
@@ -32,6 +31,3 @@ if __name__ == '__main__':
     data = numpy.asarray(data_for_csv)
     numpy.savetxt("PrisonersDilemmaMatchData.csv", data, delimiter=",")
         
-        
-    
-

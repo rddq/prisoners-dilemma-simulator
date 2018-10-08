@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class PlotHelper:
+    
     def __init__(self):
         pass
     
@@ -39,6 +40,7 @@ class PlotHelper:
         # they are on top of each other
 
 class AnalysisHelper:
+    
     def __init__(self):
         pass
 

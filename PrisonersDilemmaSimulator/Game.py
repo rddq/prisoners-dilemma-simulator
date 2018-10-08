@@ -27,8 +27,7 @@ class Game:
             results.append(curr_round)
             count += 1           
             self.rounds += 1
-            if bias is not None:
-                
+            if bias is not None: 
                 end_game = self.__flip_biased_coin(bias)
                 if end_game:
                     break
@@ -43,10 +42,3 @@ class Game:
 
     def __flip_biased_coin(self, bias):
         return choice([0,1],p=[bias,1-bias])
-
-         
-
-
-
-
-
