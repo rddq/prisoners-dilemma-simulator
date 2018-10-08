@@ -73,9 +73,10 @@ class AnalysisHelper:
         print(score_totals)
 
     @staticmethod
-    def add_to_csv(data_for_csv,results_game,game,player_number):
+    def add_to_csv(data_for_csv,results_game,game,player_1_type,player_2_type):
         data_to_add = []
-        data_to_add.append(player_number)
+        data_to_add.append(player_1_type)
+        data_to_add.append(player_2_type)
         data_to_add.append(game.rounds)
         data_to_add.extend(AnalysisHelper.total_score(results_game))
         data_for_csv.append(data_to_add)
