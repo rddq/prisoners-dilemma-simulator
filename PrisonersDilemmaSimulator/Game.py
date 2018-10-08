@@ -26,12 +26,12 @@ class Game:
             self.__add_scores(curr_round) 
             results.append(curr_round)
             count += 1           
+            self.rounds += 1
             if bias is not None:
                 
                 end_game = self.__flip_biased_coin(bias)
                 if end_game:
                     break
-            self.rounds += 1
         return results                    
 
     def __add_scores(self, curr_round):
