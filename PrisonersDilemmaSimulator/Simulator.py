@@ -17,7 +17,7 @@ if __name__ == '__main__':
         3 : "Always Cooperate",
         4 : "Tit for a tat",
         5 : "Tit for two tats",
-        6 : "Pavlov_strategy",
+        6 : "Pavlov strategy",
         7 : "Win stay lose shift",
         8 : "Never forgive"
     }
@@ -48,7 +48,6 @@ if __name__ == '__main__':
                 
                 results_p99 = game.playGame(10000, 0.99)
                 AnalysisHelper.add_to_csv(data_for_csv,results_p99,game,player_1_strat,player_2_strat, "Beta = 0.99")
-    
-    data = pandas.DataFrame.from_records(data_for_csv) 
-    pandas.DataFrame.to_csv("PrisonersDilemmaMatchData.csv", sep=",")
-        
+    labels = ["Player 1", "Player 2", "Number of Rounds", "Game Type", "Player 1 Score", "Player 2 Score"]
+    data = pandas.DataFrame.from_records(data_for_csv, columns=labels)
+    data.to_csv("PrisonersDilemmaMatchData.csv",  sep=",")        
