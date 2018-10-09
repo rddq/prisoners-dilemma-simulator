@@ -22,18 +22,6 @@ if __name__ == '__main__':
         8 : "Never forgive"
     }
 
-    game_type = {
-        0 : "5 games",
-        1 : "Always defect",
-        2 : "Random",
-        3 : "Always Cooperate",
-        4 : "Tit for a tat",
-        5 : "Tit for two tats",
-        6 : "Pavlov_strategy",
-        7 : "Win stay lose shift",
-        8 : "Never forgive"
-    }
-    
     all_results = []
     data_for_csv = []
     for player_1_type in range(0,9):
