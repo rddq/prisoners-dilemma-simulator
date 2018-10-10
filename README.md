@@ -10,7 +10,11 @@ Run the simulation by running Simulator.py
 
 Python 3.x
 
-Numpy and MatplotLib
+Numpy
+
+MatplotLib
+
+Pandas
 
 ## Authors
 
