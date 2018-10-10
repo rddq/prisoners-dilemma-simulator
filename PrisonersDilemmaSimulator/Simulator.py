@@ -58,8 +58,10 @@ class Simulator:
 
     def _create_csv_row(self,game_result,game):
         data_to_add = []
-        data_to_add.append(self.names_of_strategies.get(game.players[0].player_type))
-        data_to_add.append(self.names_of_strategies.get(game.players[1].player_type))
+        player_1_strategy = self.names_of_strategies.get(game.players[0].player_type)
+        player_2_strategy = self.names_of_strategies.get(game.players[1].player_type)
+        data_to_add.append(player_1_strategy)
+        data_to_add.append(player_2_strategy)
         results, rounds, game_type = game_result
         data_to_add.append(rounds)
         data_to_add.append(self.game_type.get(game_type))
