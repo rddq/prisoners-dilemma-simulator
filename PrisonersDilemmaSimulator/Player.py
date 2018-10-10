@@ -3,7 +3,7 @@ import random
 class Player:
     
     def __init__(self, player_type, player_number):
-        self._player_type = player_type
+        self.player_type = player_type
         self._player_number = player_number
         # 1 is defect, 0 is cooperate
         # Please make player number 0 or 1
@@ -18,10 +18,12 @@ class Player:
             7 : self.__win_stay_lose_shift,
             8 : self.__never_forgive
         }
-        
+    
+
+
     def play(self, results):
         # Below code works like a switch function
-        func = self._type_map.get(self._player_type, lambda: "Invalid Player Type")
+        func = self._type_map.get(self.player_type, lambda: "Invalid Player Type")
         return func(results)
 
     def __our_strategy(self,results):
