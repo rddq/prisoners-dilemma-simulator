@@ -1,6 +1,6 @@
 # Prisoner's Dilemma Simulator
 
-Prisoner's Dilemma Simulator is Python software that simulates repeated-play Prisoner's Dilemma games. It was originally created for a BYU CS 670 lab.
+Prisoner's Dilemma Simulator is Python software that simulates repeated-play Prisoner's Dilemma games. It was created for a BYU CS 670 Multi-Agent Systems lab.
 
 ## Getting Started
 
