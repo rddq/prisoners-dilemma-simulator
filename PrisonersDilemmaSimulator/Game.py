@@ -33,12 +33,12 @@ class Game:
             for player in self.players:
                 action = player.play(results)
                 curr_round.append(action)
-            self.__add_scores(curr_round) 
+            self._add_scores(curr_round) 
             results.append(curr_round)
             count += 1           
             rounds += 1
             if beta is not None: 
-                end_game = self.__flip_biased_coin(beta)
+                end_game = self._flip_biased_coin(beta)
                 if end_game:
                     break
         return results, rounds, game_type                 
@@ -73,12 +73,12 @@ class Game:
         beta = 0.99
         return [iterations, beta]
 
-    def __add_scores(self, curr_round):
+    def _add_scores(self, curr_round):
         p1_played = curr_round[0]
         p2_played = curr_round[1]
         played = (p1_played, p2_played)
         rewards = self._reward.get(played)
         curr_round.extend(rewards)
 
-    def __flip_biased_coin(self, bias):
+    def _flip_biased_coin(self, bias):
         return choice([0,1],p=[bias,1-bias])

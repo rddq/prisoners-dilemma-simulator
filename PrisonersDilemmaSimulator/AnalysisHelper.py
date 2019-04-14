@@ -7,7 +7,7 @@ class PlotHelper:
         pass
     
     @staticmethod
-    def __results_over_time__(player_results):
+    def _results_over_time__(player_results):
         results_over_time = [sum(player_results[0:i]) for i in range(0,len(player_results))] 
         return results_over_time
 
@@ -15,9 +15,9 @@ class PlotHelper:
     def plot_player_rewards_over_time(results):
         results = np.array(results)
         p1_results = results[:,-2]
-        p1_summation = PlotHelper.__results_over_time__(p1_results)
+        p1_summation = PlotHelper._results_over_time__(p1_results)
         p2_results = results[:,-1]
-        p2_summation = PlotHelper.__results_over_time__(p2_results)
+        p2_summation = PlotHelper._results_over_time__(p2_results)
         
         _, ax1 = plt.subplots()
         
@@ -39,8 +39,7 @@ class PlotHelper:
         # If it looks like there is only one line showing up, 
         # they are on top of each other
 
-class AnalysisHelper:
-    
+class AnalysisHelper:    
     def __init__(self):
         pass
 
