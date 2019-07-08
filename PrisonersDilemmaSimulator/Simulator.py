@@ -21,7 +21,7 @@ class Simulator:
         self.game_type = {
             0 : "5 rounds",
             1 : "100 rounds",
-            2 : "200 roudns",
+            2 : "200 rounds",
             3 : "Beta = 0.9",
             4 : "Beta = 0.95",
             5 : "Beta = 0.99",          
