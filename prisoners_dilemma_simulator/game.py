@@ -24,8 +24,9 @@ class Game:
         }
 
     def playGame(self, game_type):
-        func = self._game_set_up_methods.get(
-            game_type, lambda: "Invalid Game Type")
+        func = (
+            self._game_set_up_methods.get(game_type, lambda: "Invalid Game Type")
+        )
         iterations, beta = func()
         rounds = 0
         results = []

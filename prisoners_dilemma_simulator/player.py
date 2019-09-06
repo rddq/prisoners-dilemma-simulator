@@ -22,8 +22,9 @@ class Player:
 
     def play(self, results):
         # Below code works like a switch function
-        func = self._type_map.get(
-            self.player_type, lambda: "Invalid Player Type")
+        func = (
+            self._type_map.get(self.player_type, lambda: "Invalid Player Type")
+        )
         return func(results)
 
     def _our_strategy(self, results):

@@ -9,8 +9,9 @@ class PlotHelper:
 
     @staticmethod
     def _results_over_time__(player_results):
-        results_over_time = [sum(player_results[0:i])
-                             for i in range(0, len(player_results))]
+        results_over_time = (
+            [sum(player_results[0:i]) for i in range(0, len(player_results))]
+        )
         return results_over_time
 
     @staticmethod
