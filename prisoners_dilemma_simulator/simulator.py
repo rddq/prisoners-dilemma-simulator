@@ -1,11 +1,11 @@
-from Game import Game
-from Player import Player
-from AnalysisHelper import AnalysisHelper
-
 import pandas
 
-class Simulator:
-    
+from prisoners_dilemma_simulator.game import Game
+from prisoners_dilemma_simulator.player import Player
+from prisoners_dilemma_simulator.analysis_helper import AnalysisHelper
+
+
+class Simulator:   
     def __init__(self):
         self.names_of_strategies = {
             0 : "Two tits for a tat",

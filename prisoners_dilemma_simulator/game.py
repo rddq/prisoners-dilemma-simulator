@@ -1,6 +1,7 @@
 from numpy.random import choice
-class Game:
-    
+
+
+class Game:  
     def __init__(self, players):     
         self.players = players
         self._reward = {
