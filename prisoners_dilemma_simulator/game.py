@@ -1,18 +1,18 @@
 from numpy.random import choice
 
 
-class Game:  
-    def __init__(self, players):     
+class Game:
+    def __init__(self, players):
         self.players = players
         self._reward = {
             # Both Cooperate
-            (0,0):[3,3],
+            (0, 0): [3, 3],
             # P1 Cooperate, P2 Defect
-            (0,1):[1,5],
+            (0, 1): [1, 5],
             # P1 Defect, P2 Cooperate
-            (1,0):[5,1],
+            (1, 0): [5, 1],
             # Both Defect
-            (1,1):[2,2]
+            (1, 1): [2, 2]
         }
         self._game_set_up_methods = {
             0: self.set_up_type_0,
@@ -23,26 +23,27 @@ class Game:
             5: self.set_up_type_5
         }
 
-    def playGame(self,game_type):
-        func = self._game_set_up_methods.get(game_type, lambda: "Invalid Game Type")
+    def playGame(self, game_type):
+        func = self._game_set_up_methods.get(
+            game_type, lambda: "Invalid Game Type")
         iterations, beta = func()
         rounds = 0
-        results = []       
+        results = []
         count = 0
         while count < iterations:
-            curr_round = []           
+            curr_round = []
             for player in self.players:
                 action = player.play(results)
                 curr_round.append(action)
-            self._add_scores(curr_round) 
+            self._add_scores(curr_round)
             results.append(curr_round)
-            count += 1           
+            count += 1
             rounds += 1
-            if beta is not None: 
+            if beta is not None:
                 end_game = self._flip_biased_coin(beta)
                 if end_game:
                     break
-        return results, rounds, game_type                 
+        return results, rounds, game_type
 
     def set_up_type_0(self):
         iterations = 5
@@ -82,4 +83,4 @@ class Game:
         curr_round.extend(rewards)
 
     def _flip_biased_coin(self, bias):
-        return choice([0,1],p=[bias,1-bias])
+        return choice([0, 1], p=[bias, 1-bias])
