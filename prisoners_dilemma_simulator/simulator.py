@@ -27,8 +27,9 @@ class Simulator:
             5: "Beta = 0.99",
         }
 
-    def playPrisonersDilemmaRepeatedPlay(self):
+    def simulate_repeated_play_prisoners_dilemma(self):
         self.data_for_csv = []
+        # Have every strategy play every other strategy with 6 game types
         for player_1_type in range(0, 9):
             for player_2_type in range(0, 9):
                 self._play_6_game_Types(player_1_type, player_2_type)
@@ -46,7 +47,8 @@ class Simulator:
         game_results.append(game.playGame(game_type=0))
         game_results.append(game.playGame(game_type=1))
         game_results.append(game.playGame(game_type=2))
-        # Repeat the beta game for better statistical accuracy
+        # Repeat the beta game multiple times for better statistical accuracy
+        # since beta games are non-deterministic
         for _ in range(0, 30):
             game_results.append(game.playGame(game_type=3))
             game_results.append(game.playGame(game_type=4))
@@ -71,8 +73,3 @@ class Simulator:
         data_to_add.append(self.game_type.get(game_type))
         data_to_add.extend(AnalysisHelper.total_score(results))
         return data_to_add
-
-
-if __name__ == '__main__':
-    sim = Simulator()
-    sim.playPrisonersDilemmaRepeatedPlay()
