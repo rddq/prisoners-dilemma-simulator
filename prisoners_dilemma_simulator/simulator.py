@@ -2,7 +2,7 @@ import pandas
 
 from prisoners_dilemma_simulator.game import Game
 from prisoners_dilemma_simulator.player import Player
-from prisoners_dilemma_simulator.analysis_helper import AnalysisHelper
+from prisoners_dilemma_simulator.analysis_helper import AnalysisHelper, PlotHelper
 
 
 class Simulator:
@@ -32,13 +32,13 @@ class Simulator:
         # Have every strategy play every other strategy with 6 game types
         for player_1_type in range(0, 9):
             for player_2_type in range(0, 9):
-                self._play_6_game_Types(player_1_type, player_2_type)
+                self._play_6_game_types(player_1_type, player_2_type)
         labels = ["Player 1", "Player 2", "Number of Rounds",
                   "Game Type", "Player 1 Score", "Player 2 Score"]
         data = pandas.DataFrame.from_records(self.data_for_csv, columns=labels)
         data.to_csv("PrisonersDilemmaMatchData.csv",  sep=",")
 
-    def _play_6_game_Types(self, player_1_type, player_2_type):
+    def _play_6_game_types(self, player_1_type, player_2_type):
         players = [Player(player_1_type, player_number=0),
                    Player(player_2_type, player_number=1)]
         game = Game(players)
