@@ -4,7 +4,7 @@ Prisoner's Dilemma Simulator is Python software that simulates repeated-play Pri
 
 ## Getting Started
 
-Run the simulation by running Simulator.py 
+Run the simulation by running a script in the script folder
 
 ### Requirements
 
@@ -12,7 +12,7 @@ Python 3.x
 
 Numpy
 
-MatplotLib
+Matplotlib
 
 Pandas
 
