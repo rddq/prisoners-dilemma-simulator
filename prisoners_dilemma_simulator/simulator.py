@@ -2,7 +2,7 @@ import pandas
 
 from prisoners_dilemma_simulator.game import Game
 from prisoners_dilemma_simulator.player import Player
-from prisoners_dilemma_simulator.analysis_helper import AnalysisHelper, PlotHelper
+from prisoners_dilemma_simulator.analysis_helper import AnalysisHelper
 
 
 class Simulator:
