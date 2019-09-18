@@ -5,6 +5,7 @@ Prisoner's Dilemma Simulator is Python software that simulates repeated-play Pri
 ## Getting Started
 
 Run the simulation by running:
+
 python -m scripts.play_prisoners_dilemma
 
 The script will save a csv with the game results from each strategy matchup and each game type.
